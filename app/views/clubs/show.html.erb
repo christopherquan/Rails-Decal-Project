@@ -1,0 +1,21 @@
+<td><%= button_to "Logout", user_path(id: "sign_out"), :class => "button small", :method => :delete %></td>
+<td><%= button_to "View User", user_path(id: current_user.id), :class => "button small", :method => :get %></td>
+<div class="container">
+  <div class="row">
+    <h3>Clubs</h3>
+    <div class="column">
+      <table class="table">
+        <tbody>
+          <% @clubs.each do |club| %>
+            <tr>
+              <td><%= link_to club.name, club %></td>
+              <td><%= button_to "Join", join_path(id: club.id), :class => "button small", :method => :patch %></td>
+
+
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

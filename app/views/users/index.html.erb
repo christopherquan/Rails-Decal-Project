@@ -1,0 +1,17 @@
+<td><%= button_to "Logout", user_path(id: "sign_out"), :class => "button small", :method => :delete %></td>
+<div class="container">
+  <div class="row">
+    <h3>Users</h3>
+    <div class="column">
+      <table class="table">
+        <tbody>
+          <% @users.each do |user| %>
+            <tr>
+              <%= render user %>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
